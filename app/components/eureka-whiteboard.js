@@ -31,7 +31,7 @@ export default Ember.Component.extend({
     stage.addChild(wrapper);
     wrapper.addChild(shape);
 
-    createjs.Touch.enable(this.stage);
+    createjs.Touch.enable(stage);
 
     // Setup mouse listeners
     stage.on("stagemousemove", this.mouseover.bind(this));
