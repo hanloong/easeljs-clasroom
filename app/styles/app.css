@@ -1,0 +1,16 @@
+body {
+  background: #722B90;
+  color: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+canvas {
+  width: 800px;
+  height: 600px;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 5px 5px 5px #411752;
+}
+
+.graph-paper canvas {
+  background: url('/assets/images/grid-bg.gif') repeat;
+}

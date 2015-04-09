@@ -1,0 +1,17 @@
+<h1>Whiteboard</h1>
+<h4>Current Tool: {{current_tool}}</h4>
+<button {{action 'setTool' 'pen'}}>Pen</button>
+<button {{action 'setTool' 'eraser'}}>Eraser</button>
+<label>
+  Width:
+  {{input type="text" value=width action="updateSize" on="key-press"}}
+</label>
+<label>
+  Height:
+  {{input type="text" value=height action="updateSize" on="key-press"}}
+</label>
+<label>
+  {{input type="checkbox" checked=graphPaper }}
+  Toggle Graph Paper
+</label>
+<canvas id="demoCanvas" width='500' height='500'></canvas>
