@@ -1,16 +1,92 @@
 body {
-  background: #722B90;
+  background: #854C9E;
   color: white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 canvas {
-  width: 800px;
-  height: 600px;
-  margin-top: 20px;
   background: white;
-  box-shadow: 5px 5px 5px #411752;
 }
 
 .graph-paper canvas {
   background: url('/assets/images/grid-bg.gif') repeat;
+}
+
+.sidebar {
+  display: none;
+  padding: 0 15px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #854C9E;
+  box-shadow: 2px 2px 3px #ccc;
+  max-width: 210px;
+  border-radius: 10px;
+}
+
+.show-sidebar .sidebar {
+  display: block;
+}
+
+.sidebar button {
+  padding: 0;
+  margin-right: 5px;
+  background: #fff;
+  color: #854C9E;
+  border: none;
+  text-align: center;
+  height: 26px;
+  width: 26px;
+  border-radius: 13px;
+}
+
+.sidebar button:hover {
+  background: #42a2da;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar button.close {
+  padding: 0;
+  border: 1px solid #854C9E;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+}
+
+.sidebar button.close:hover {
+  border: 1px solid white;
+  background: #854C9E;
+  color: white;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+}
+
+.hover-group {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.hover-group button {
+  background: #854C9E;
+  padding: 0;
+  color: #fff;
+  border: none;
+  text-align: center;
+  height: 26px;
+  width: 26px;
+  border-radius: 13px;
+  box-shadow: 2px 2px 3px #eee;
+}
+
+.hover-group button:hover, .hover-group button:focus {
+  background: #42a2da;
+  cursor: pointer;
+}
+
+.show-sidebar .hover-group {
+  display: none;
 }
