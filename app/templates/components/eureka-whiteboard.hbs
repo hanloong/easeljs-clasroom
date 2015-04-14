@@ -3,21 +3,23 @@
     {{fa-icon 'close'}}
   </button>
   <h3>Whiteboard Tools</h3>
-  <button {{action 'setTool' 'pen'}}>
-    {{fa-icon 'pencil'}}
-  </button>
-  <button {{action 'setTool' 'line'}}>
-    {{fa-icon 'arrows-h'}}
-  </button>
-  <button {{action 'setTool' 'square'}}>
-    {{fa-icon 'square'}}
-  </button>
-  <button {{action 'setTool' 'circle'}}>
-    {{fa-icon 'circle'}}
-  </button>
-  <button {{action 'setTool' 'eraser'}}>
-    {{fa-icon 'eraser'}}
-  </button>
+  <ul class='tools'>
+    <li>
+      <button {{action 'setTool' 'pen'}}> {{fa-icon 'pencil'}} </button> Pen
+    </li>
+    <li>
+      <button {{action 'setTool' 'line'}}> {{fa-icon 'arrows-h'}} </button>
+    </li>
+    <li>
+      <button {{action 'setTool' 'square'}}> {{fa-icon 'square'}} </button>
+    </li>
+    <li>
+      <button {{action 'setTool' 'circle'}}> {{fa-icon 'circle'}} </button>
+    </li>
+    <li>
+      <button {{action 'setTool' 'eraser'}}> {{fa-icon 'eraser'}} </button>
+    </li>
+  </ul>
   <p>
     <label>
       {{input type="checkbox" checked=fillShape }}

@@ -15,14 +15,33 @@ canvas {
 
 .sidebar {
   display: none;
-  padding: 0 15px;
+  padding: 0;
   position: absolute;
-  top: 15px;
-  left: 15px;
-  background: #854C9E;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #232b37;
   box-shadow: 2px 2px 3px #ccc;
   max-width: 210px;
   border-radius: 10px;
+}
+
+.sidebar h3 {
+  color: #e5e5e5;
+}
+
+.sidebar .tools {
+  color: #e5e5e5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .tools li {
+  width: 100%;
+  margin: 0;
+  display: block;
+  background: #232b37;
 }
 
 .show-sidebar .sidebar {
@@ -31,7 +50,6 @@ canvas {
 
 .sidebar button {
   padding: 0;
-  margin-right: 5px;
   background: #fff;
   color: #854C9E;
   border: none;
