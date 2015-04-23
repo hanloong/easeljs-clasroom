@@ -27,7 +27,29 @@ export default Ember.Component.extend({
   current_tool: 'pen',
   tools: ['pen', 'line', 'eraser', 'square', 'circle', 'text'],
 
+  isPen: function() {
+    return this.get('current_tool') == 'pen';
+  }.property('current_tool'),
+
+  isLine: function() {
+    return this.get('current_tool') == 'line';
+  }.property('current_tool'),
+
+  isSquare: function() {
+    return this.get('current_tool') == 'square';
+  }.property('current_tool'),
+
+  isCircle: function() {
+    return this.get('current_tool') == 'circle';
+  }.property('current_tool'),
+
+  isEraser: function() {
+    return this.get('current_tool') == 'eraser';
+  }.property('current_tool'),
+
   didInsertElement:  function() {
+    this.$(".sidebar-toggle").sideNav();
+
     var stage = new createjs.Stage("demoCanvas");
     var shape = new createjs.Shape();
     var wrapper = new createjs.Container();
@@ -99,6 +121,7 @@ export default Ember.Component.extend({
         }
       }
       if (this.get('current_tool') === 'line') {
+        // draw
         shape.graphics.beginStroke(this.get('color'))
         .setStrokeStyle(this.get('size'), "round")
         .moveTo(this.get('startX'), this.get('startY'))
@@ -127,6 +150,7 @@ export default Ember.Component.extend({
 
         if (erase) { size = size*5; }
         if (this.get('current_tool') === 'pen' || this.get('current_tool') === 'eraser') {
+          // Draw function
           shape.graphics.beginStroke(this.get('color'))
           .setStrokeStyle(size, "round")
           .moveTo(this.get('oldX'), this.get('oldY'))
@@ -167,6 +191,9 @@ export default Ember.Component.extend({
       this.get('wrapper').updateCache(erase?"destination-out":"source-over");
       shape.graphics.clear();
     }
+  },
+
+  drawShape: function() {
   },
 
   resizeCanvas: function() {

@@ -1,50 +1,32 @@
-<div class='sidebar'>
-  <button class='close' {{action 'toggleSidebar' false}}>
-    {{fa-icon 'close'}}
-  </button>
-  <h3>Whiteboard Tools</h3>
-  <ul class='tools'>
-    <li>
-      <button {{action 'setTool' 'pen'}}> {{fa-icon 'pencil'}} </button> Pen
+<div id="slide-out" class="side-nav">
+  <ul>
+    <li {{bind-attr class="isPen:active"}}>
+      <a href='#' {{action 'setTool' 'pen'}}> {{fa-icon 'pencil'}} Pen </a>
     </li>
-    <li>
-      <button {{action 'setTool' 'line'}}> {{fa-icon 'arrows-h'}} </button>
+    <li {{bind-attr class="isLine:active"}}>
+      <a href='#' {{action 'setTool' 'line'}}> {{fa-icon 'arrows-h'}} Line </a>
     </li>
-    <li>
-      <button {{action 'setTool' 'square'}}> {{fa-icon 'square'}} </button>
+    <li {{bind-attr class="isSquare:active"}}>
+      <a href='#' {{action 'setTool' 'square'}}> {{fa-icon 'square-o'}} Square </a>
     </li>
-    <li>
-      <button {{action 'setTool' 'circle'}}> {{fa-icon 'circle'}} </button>
+    <li {{bind-attr class="isCircle:active"}}>
+      <a href='#' {{action 'setTool' 'circle'}}> {{fa-icon 'circle-o'}} Elipse </a>
     </li>
-    <li>
-      <button {{action 'setTool' 'eraser'}}> {{fa-icon 'eraser'}} </button>
+    <li {{bind-attr class="isEraser:active"}}>
+      <a href='#' {{action 'setTool' 'eraser'}}> {{fa-icon 'eraser'}} Eraser </a>
+    </li>
+    <li class='input'>
+      {{input id='toggle-fill' type="checkbox" checked=fillShape }}
+      <label for='toggle-fill'>Toggle Fill </label>
+    </li>
+    <li class='input'>
+      {{input id='graph-paper' type="checkbox" checked=graphPaper}}
+      <label for='graph-paper'> Graph Paper </label>
     </li>
   </ul>
-  <p>
-    <label>
-      {{input type="checkbox" checked=fillShape }}
-      Toggle Fill
-    </label>
-  </p>
-  <p>
-    <label>
-      {{input type="checkbox" checked=graphPaper }}
-      Toggle Graph Paper
-    </label>
-  </p>
-  <p>
-    <label>
-      Colour:
-      {{input type="text" value=color}}
-    </label>
-  </p>
-  <p>
-    <strong>Current Tool: {{current_tool}}</strong>
-  </p>
 </div>
 <div class="hover-group">
-  <button {{action 'toggleSidebar' true}}>
-    {{fa-icon "bars"}}
-  </button>
+  <a href="#" data-activates="slide-out" class="sidebar-toggle btn-floating btn-large waves-effect waves-light red"><i class="mdi-navigation-menu"></i></a>
+
 </div>
 <canvas id="demoCanvas" width='800' height='600'></canvas>

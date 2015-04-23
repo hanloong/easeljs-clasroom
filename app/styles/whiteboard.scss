@@ -1,0 +1,36 @@
+$yt_purple: #854C9E;
+
+canvas {
+  background: white;
+}
+
+.graph-paper canvas {
+  background: url('/assets/images/grid-bg.gif') repeat;
+}
+
+.hover-group {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.side-nav {
+  ul {
+    margin: 0;
+    li a {
+      font-weight: bold;
+    }
+  }
+  li.active {
+    background: $yt_purple;
+    a {
+      color: white;
+      font-weight: bold;
+    }
+  }
+  li.input {
+    height: 64px;
+    line-height: 64px;
+    padding: 0 15px;
+  }
+}
