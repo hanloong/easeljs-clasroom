@@ -1,4 +1,9 @@
 $yt_purple: #854C9E;
+$yt_grey: #232b37;
+
+.yt-purple {
+  background-color: $yt_purple;
+}
 
 canvas {
   background: white;
@@ -11,14 +16,43 @@ canvas {
 .hover-group {
   position: absolute;
   top: 10px;
-  left: 10px;
+  &.left {
+    left: 10px;
+  }
+  &.right {
+    right: 10px
+  }
+  .expand {
+    display: none;
+    li {
+      margin: 10px 0;
+    }
+  }
+  &:hover, &:focus {
+    .expand {
+      display: block;
+    }
+  }
 }
 
 .side-nav {
+  background: lighten($yt_grey, 10%);
   ul {
     margin: 0;
-    li a {
+    li {
+      background: $yt_grey;
+      margin: 1px 0;
+      &:hover, &:focus {
+        background: #03a9f4;
+      }
+      font-size: 30px;
+    }
+    .fa {
+      width: 40px;
+    }
+    li a, li label {
       font-weight: bold;
+      color: white;
     }
   }
   li.active {
