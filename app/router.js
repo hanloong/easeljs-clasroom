@@ -9,4 +9,5 @@ export default Router.map(function() {
   this.route('whiteboards', function() {
     this.route('show', {path: '/:whiteboard_id'});
   });
+  this.route('home', {path: '/'});
 });

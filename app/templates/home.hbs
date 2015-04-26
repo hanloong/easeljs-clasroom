@@ -1,0 +1,7 @@
+<ul class="collection">
+  {{#each wb in model}}
+  <li class="collection-item">
+    {{#link-to 'whiteboards.show' wb}} Whiteboard: {{wb.id}}{{/link-to}}
+  </li>
+  {{/each}}
+</ul>
