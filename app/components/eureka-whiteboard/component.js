@@ -28,29 +28,30 @@ export default Ember.Component.extend({
   tools: ['pen', 'line', 'eraser', 'square', 'circle', 'text'],
 
   isPen: function() {
-    return this.get('current_tool') == 'pen';
+    return this.get('current_tool') === 'pen';
   }.property('current_tool'),
 
   isLine: function() {
-    return this.get('current_tool') == 'line';
+    return this.get('current_tool') === 'line';
   }.property('current_tool'),
 
   isSquare: function() {
-    return this.get('current_tool') == 'square';
+    return this.get('current_tool') === 'square';
   }.property('current_tool'),
 
   isCircle: function() {
-    return this.get('current_tool') == 'circle';
+    return this.get('current_tool') === 'circle';
   }.property('current_tool'),
 
   isEraser: function() {
-    return this.get('current_tool') == 'eraser';
+    return this.get('current_tool') === 'eraser';
   }.property('current_tool'),
 
   didInsertElement:  function() {
     this.$(".sidebar-toggle").sideNav();
 
-    var stage = new createjs.Stage("demoCanvas");
+    var id = "wb-" + this.get('wb').get('id');
+    var stage = new createjs.Stage(id);
     var shape = new createjs.Shape();
     var wrapper = new createjs.Container();
     var tempShape = new createjs.Shape();
@@ -127,7 +128,6 @@ export default Ember.Component.extend({
         .moveTo(this.get('startX'), this.get('startY'))
         .lineTo(evt.stageX, evt.stageY);
       }
-
     }
 
     this.set('drawing', false);
